@@ -10,3 +10,5 @@ function computerPlay() {
   const computerChoiceWord = Math.floor(Math.random() * words.length);
   return words[computerChoiceWord];
 }
+// can delete this console log line when playRound function is written.This is now just for testing purpose in console
+console.log(computerPlay());
