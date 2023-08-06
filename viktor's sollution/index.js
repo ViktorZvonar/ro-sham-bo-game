@@ -3,10 +3,8 @@ import { playRound } from "./utils/playRound.js";
 import { replayGame } from "./utils/replayGame.js";
 import { welcomeMessage } from "./utils/welcomeMessage.js";
 import { outcomes } from "./utils/outcomes.js";
-import { displayFinalResult } from "./utils/displayFinalResult.js";
 
 function game() {
-  console.clear();
   welcomeMessage();
 
   let playerScore = 0;
@@ -51,8 +49,7 @@ function game() {
     }
   }
 
-  outcomes();
-  displayFinalResult(playerScore, computerScore);
+  outcomes(playerScore, computerScore);
   replayGame(game);
 }
 
