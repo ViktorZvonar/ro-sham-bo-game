@@ -2,7 +2,6 @@ import { computerPlay } from "./utils/computerPlay.js";
 import { playRound } from "./utils/playRound.js";
 import { replayGame } from "./utils/replayGame.js";
 import { welcomeMessage } from "./utils/welcomeMessage.js";
-import { handlePlayerSelection } from "./utils/handlePlayerSelection.js";
 import { outcomes } from "./utils/outcomes.js";
 import { displayFinalResult } from "./utils/displayFinalResult.js";
 
@@ -12,9 +11,34 @@ function game() {
 
   let playerScore = 0;
   let computerScore = 0;
+  let playerSelection;
 
   for (let i = 0; i < 5; i++) {
-    const playerSelection = handlePlayerSelection();
+    while (true) {
+      playerSelection = prompt("Enter your choice: Rock, Paper, or Scissors?");
+
+      if (playerSelection === null) {
+        const leaveGame = confirm(
+          "If you leave, the mankind will be ASHED. Boo!",
+        );
+        if (leaveGame) {
+          alert("You left the Game... See you in hell!");
+          return;
+        }
+      } else {
+        playerSelection = playerSelection.toLowerCase();
+        if (
+          playerSelection !== "rock" &&
+          playerSelection !== "scissors" &&
+          playerSelection !== "paper"
+        ) {
+          alert("Ha-ha! Wrong choice! Try again...");
+        } else {
+          break;
+        }
+      }
+    }
+
     const computerSelection = computerPlay();
     const result = playRound(playerSelection, computerSelection);
 
