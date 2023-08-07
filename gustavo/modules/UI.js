@@ -1,9 +1,6 @@
 export const UI = {
   header(scoreboard) {
     console.clear();
-
-    console.log();
-
     console.log(
       "%c\n\n\n\n\n\nROCK PAPER SCISSORS",
       "font-size: 32px; font-weight: bold;",
@@ -22,9 +19,7 @@ Shortcuts:
 - "p" = "paper".
 - "s" = "scissors".`,
     );
-
     console.log("\n");
-
     console.log(
       "%cSCOREBOARD",
       "font-size: 20px; font-weight: bold;",
@@ -32,9 +27,7 @@ Shortcuts:
 Draws: ${scoreboard.draws}
 Losses: ${scoreboard.losses}`,
     );
-
     console.log("\n");
-
     console.log(
       `%cROUND ${scoreboard.rounds}`,
       "font-size: 20px; font-weight: bold;",
