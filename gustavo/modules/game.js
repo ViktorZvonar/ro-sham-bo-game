@@ -7,6 +7,7 @@ import { scoreboard } from "./scoreboard.js";
 import { leaveGame } from "./leaveGame.js";
 
 export function game() {
+  ui.welcome();
   scoreboard.reset();
   ui.logHeader();
 
