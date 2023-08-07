@@ -5,9 +5,8 @@ export const UI = {
       "%c\n\n\n\n\n\nROCK PAPER SCISSORS",
       "font-size: 32px; font-weight: bold;",
       `\n\nRules:
-- Use the cancel button to exit the game.
+- Use the cancel button to exit the game (NOT recommended).
 - Use the alert box to input "rock", "paper" or "scissors". Then click "OK" and your input will be compared against your opponent's.
-- You win if you beat them 5 times.
 
 Remember:
 - Rock beats Scissors, but loses against Paper.

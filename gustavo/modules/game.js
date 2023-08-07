@@ -3,6 +3,7 @@ import { playerPlay } from "./playerPlay.js";
 import { computerPlay } from "./computerPlay.js";
 import { UI } from "./UI.js";
 import { playRound } from "./playRound.js";
+import { replayGame } from "./replayGame.js";
 
 export function game() {
   const scoreboard = makeScoreboard();
@@ -21,5 +22,6 @@ export function game() {
   }
 
   UI.finish();
+  replayGame(game);
   return 0;
 }

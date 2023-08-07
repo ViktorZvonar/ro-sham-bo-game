@@ -1,3 +1,3 @@
 import PlayGame from "./modules/playGame.js";
 
-PlayGame();
+window.PlayGame = PlayGame;
