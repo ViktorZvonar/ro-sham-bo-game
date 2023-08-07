@@ -9,13 +9,13 @@ export function processRoundResult(
 ) {
   if (roundResult === RESULTS.WIN) {
     scoreboard.countWin();
-    UI.win(playerSelection, computerSelection);
+    UI.win(playerSelection, computerSelection, scoreboard);
   } else if (roundResult === RESULTS.LOSS) {
     scoreboard.countLoss(playerSelection, computerSelection);
-    UI.draw(playerSelection, computerSelection);
+    UI.loss(playerSelection, computerSelection, scoreboard);
   } else if (roundResult === RESULTS.DRAW) {
     scoreboard.countDraw(playerSelection);
-    UI.loss(playerSelection);
+    UI.draw(playerSelection, scoreboard);
   }
 
   scoreboard.countRound();

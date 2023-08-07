@@ -5,13 +5,11 @@ import { UI } from "./UI.js";
 import { playRound } from "./playRound.js";
 
 export function game() {
-  UI.start();
   const scoreboard = makeScoreboard();
+  UI.header(scoreboard);
 
   while (scoreboard.wins < 5) {
-    UI.round(scoreboard);
-
-    const playerSelection = playerPlay();
+    const playerSelection = playerPlay(scoreboard);
     const computerSelection = computerPlay();
 
     if (!playerSelection) {
@@ -20,8 +18,6 @@ export function game() {
     }
 
     playRound(playerSelection, computerSelection, scoreboard);
-
-    UI.score(scoreboard);
   }
 
   UI.finish();
