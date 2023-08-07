@@ -8,7 +8,7 @@ export function game() {
   const scoreboard = makeScoreboard();
   UI.header(scoreboard);
 
-  while (scoreboard.wins < 5) {
+  while (!scoreboard.isFinished()) {
     const playerSelection = playerPlay(scoreboard);
     const computerSelection = computerPlay();
 
