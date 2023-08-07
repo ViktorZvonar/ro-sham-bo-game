@@ -1,15 +1,14 @@
 import { UI } from "./UI.js";
-import { isValidInput } from "./isValidInput.js";
+import { getPlayerMove } from "./getPlayerMove.js";
 
-export function playerPlay() {
+export function playerPlay(scoreboard) {
   while (true) {
-    const playerInput = prompt(
-      `What's your move?\nChoose between rock, paper and scissors.`,
-    );
+    const playerInput = UI.getPlayerInput();
+    if (!playerInput) return null;
 
-    if (typeof playerInput !== "string") return null;
-    else if (isValidInput(playerInput)) return playerInput.toUpperCase();
+    const playerMove = getPlayerMove(playerInput);
+    if (playerMove) return playerMove;
 
-    UI.wrongInput();
+    UI.wrongInput(scoreboard);
   }
 }
