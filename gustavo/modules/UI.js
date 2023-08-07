@@ -37,6 +37,7 @@ Losses: ${scoreboard.losses}`,
   exit() {
     console.clear();
     console.log("You exited the game.");
+    this.playAgain();
   },
 
   getPlayerInput() {
