@@ -7,7 +7,7 @@ export const UI = {
       `\n\nRules:
 - Use the cancel button to exit the game.
 - Use the alert box to input "rock", "paper" or "scissors". Then click "OK" and your input will be compared against your opponent's.
-- You win if you beat them 5 times.
+- There are five rounds. You win the game if you win more rounds than your opponent.
 
 Remember:
 - Rock beats Scissors, but loses against Paper.
@@ -37,6 +37,7 @@ Losses: ${scoreboard.losses}`,
   exit() {
     console.clear();
     console.log("You exited the game.");
+    this.playAgain();
   },
 
   getPlayerInput() {
@@ -52,7 +53,7 @@ Losses: ${scoreboard.losses}`,
     );
   },
 
-  win(playerSelection, computerSelection, scoreboard) {
+  roundWin(playerSelection, computerSelection, scoreboard) {
     this.header(scoreboard);
     console.log(
       `%cYou won! ${playerSelection} beats ${computerSelection}.`,
@@ -60,12 +61,12 @@ Losses: ${scoreboard.losses}`,
     );
   },
 
-  draw(selection, scoreboard) {
+  roundDraw(selection, scoreboard) {
     this.header(scoreboard);
     console.log(`%cIt's a draw! Both chose ${selection}.`, "color: #fcba03;");
   },
 
-  loss(playerSelection, computerSelection, scoreboard) {
+  roundLoss(playerSelection, computerSelection, scoreboard) {
     this.header(scoreboard);
     console.log(
       `%cYou lost! ${computerSelection} beats ${playerSelection}.`,
@@ -73,10 +74,34 @@ Losses: ${scoreboard.losses}`,
     );
   },
 
-  finish() {
+  playAgain() {
     console.log(
-      "%cYou have finished the game. Congratulations!",
+      '%cCall "game()" to play again.',
+      "font-size: 16px; font-weight-bold;",
+    );
+  },
+
+  gameWin() {
+    console.log(
+      "%cYou won the game. Congratulations!",
       "background-image: linear-gradient(to left, #a8ff78, #78ffd6); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
     );
+    this.playAgain();
+  },
+
+  gameDraw() {
+    console.log(
+      "%cOh, it's a draw. Boring...",
+      "background-image: linear-gradient(to left, #fdc830, #f37335); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
+    );
+    this.playAgain();
+  },
+
+  gameLoss() {
+    console.log(
+      "%cYou lost the game. That's bad.",
+      "background-image: linear-gradient(to left, #ff416C, #ff4b2b); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
+    );
+    this.playAgain();
   },
 };

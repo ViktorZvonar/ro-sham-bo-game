@@ -3,12 +3,13 @@ import { playerPlay } from "./playerPlay.js";
 import { computerPlay } from "./computerPlay.js";
 import { UI } from "./UI.js";
 import { playRound } from "./playRound.js";
+import { finishGame } from "./finishGame.js";
 
 export function game() {
   const scoreboard = makeScoreboard();
   UI.header(scoreboard);
 
-  while (!scoreboard.isFinished()) {
+  for (let i = 0; i < 5; i++) {
     const playerSelection = playerPlay(scoreboard);
     const computerSelection = computerPlay();
 
@@ -20,6 +21,6 @@ export function game() {
     playRound(playerSelection, computerSelection, scoreboard);
   }
 
-  UI.finish();
+  finishGame(scoreboard);
   return 0;
 }
