@@ -6,5 +6,5 @@ export function leaveGame() {
     alert("You left the Game... See you in hell!");
     return;
   }
-  return prompt("What's your move?");
+  prompt("What's your move?");
 }
