@@ -53,4 +53,4 @@ function game() {
   replayGame(game);
 }
 
-game();
+window.game = game;
