@@ -1,6 +1,6 @@
 import { scoreboard } from "./scoreboard.js";
 
-export const UI = {
+export const ui = {
   header() {
     console.clear();
     console.log(
@@ -36,14 +36,12 @@ Losses: ${scoreboard.losses}`,
     );
   },
 
-  exit() {
-    console.clear();
-    console.log("You exited the game.");
-    this.playAgain();
-  },
-
   getPlayerInput() {
     return prompt("What's your move?");
+  },
+
+  getPlayerExitConfirmation() {
+    return confirm("If you leave, mankind will be ASHED. Boo!");
   },
 
   wrongInput() {
@@ -76,16 +74,11 @@ Losses: ${scoreboard.losses}`,
     );
   },
 
-  playAgain() {
-    console.log('Call "game()" to play again.');
-  },
-
   gameWin() {
     console.log(
       "%cYou won the game. Congratulations!",
       "background-image: linear-gradient(to left, #a8ff78, #78ffd6); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
     );
-    this.playAgain();
   },
 
   gameDraw() {
@@ -93,7 +86,6 @@ Losses: ${scoreboard.losses}`,
       "%cOh, it's a draw. Boring...",
       "background-image: linear-gradient(to left, #fdc830, #f37335); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
     );
-    this.playAgain();
   },
 
   gameLoss() {
@@ -101,6 +93,25 @@ Losses: ${scoreboard.losses}`,
       "%cYou lost the game. That's bad.",
       "background-image: linear-gradient(to left, #ff416C, #ff4b2b); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
     );
-    this.playAgain();
+  },
+
+  exit() {
+    console.clear();
+    console.log(`You exited the game.
+Call "game()" to play again.`);
+  },
+
+  leave() {
+    this.exit();
+    alert("You left the Game... See you in hell!");
+  },
+
+  end() {
+    this.exit();
+    alert("See you, sweety !!!");
+  },
+
+  yesOrNo() {
+    alert("You must decide! Yes or no...");
   },
 };

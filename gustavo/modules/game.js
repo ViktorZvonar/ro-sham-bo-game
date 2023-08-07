@@ -1,31 +1,27 @@
 import { playerPlay } from "./playerPlay.js";
 import { computerPlay } from "./computerPlay.js";
-import { UI } from "./UI.js";
+import { ui } from "./ui.js";
 import { playRound } from "./playRound.js";
 import { finishGame } from "./finishGame.js";
 import { scoreboard } from "./scoreboard.js";
-import { replayGame } from "./replayGame.js";
 import { leaveGame } from "./leaveGame.js";
 
 export function game() {
   scoreboard.reset();
-  UI.header();
+  ui.header();
 
   for (let i = 0; i < 5; i++) {
-    const playerSelection = playerPlay();
+    let playerSelection = playerPlay();
     const computerSelection = computerPlay();
 
-    if (!playerSelection) {
-      // leaveGame();
-      UI.exit();
-      return 0;
+    while (!playerSelection) {
+      if (leaveGame()) return 0;
+      playerSelection = playerPlay();
     }
 
     playRound(playerSelection, computerSelection);
   }
 
-  finishGame();
-  replayGame(game);
-
+  finishGame(game);
   return 0;
 }
