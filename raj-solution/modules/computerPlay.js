@@ -5,10 +5,9 @@
  *
 //  * @returns {string} The word that the computer has randomly selected ("Rock", "Paper", or "Scissors").
  */
-function computerPlay() {
+export function computerPlay() {
   const words = ["Rock", "Paper", "Scissors"];
   const computerChoiceWord = Math.floor(Math.random() * words.length);
   return words[computerChoiceWord];
 }
 // can delete this console log line when playRound function is written.This is now just for testing purpose in console
-console.log(computerPlay());
