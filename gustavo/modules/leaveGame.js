@@ -1,10 +1,10 @@
-export function leaveGame() {
-  const wantToLeave = confirm("If you leave, mankind will be ASHED. Boo!");
+import { ui } from "./ui.js";
 
-  if (wantToLeave) {
-    console.clear();
-    alert("You left the Game... See you in hell!");
-    return;
+export function leaveGame() {
+  const wantToExit = ui.getPlayerLeaveConfirmation();
+  if (wantToExit) {
+    ui.logExit();
+    return true;
   }
-  prompt("What's your move?");
+  return false;
 }

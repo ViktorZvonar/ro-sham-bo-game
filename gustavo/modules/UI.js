@@ -1,7 +1,7 @@
 import { scoreboard } from "./scoreboard.js";
 
-export const UI = {
-  header() {
+export const ui = {
+  logHeader() {
     console.clear();
     console.log(
       "%c\n\n\n\n\n\nROCK PAPER SCISSORS",
@@ -36,18 +36,8 @@ Losses: ${scoreboard.losses}`,
     );
   },
 
-  exit() {
-    console.clear();
-    console.log("You exited the game.");
-    this.playAgain();
-  },
-
-  getPlayerInput() {
-    return prompt("What's your move?");
-  },
-
-  wrongInput() {
-    this.header();
+  logWrongInput() {
+    this.logHeader();
     console.log(
       `⚠️ Wrong input. Try again.                                   
 ⚠️ You have to choose between "rock", "paper" and "scissors".
@@ -55,52 +45,77 @@ Losses: ${scoreboard.losses}`,
     );
   },
 
-  roundWin(playerSelection, computerSelection) {
-    this.header();
+  logRoundWin(playerSelection, computerSelection) {
+    this.logHeader();
     console.log(
       `%cYou won! ${playerSelection} beats ${computerSelection}.`,
       "color: #03fc35;",
     );
   },
 
-  roundDraw(selection) {
-    this.header();
+  logRoundDraw(selection) {
+    this.logHeader();
     console.log(`%cIt's a draw! Both chose ${selection}.`, "color: #fcba03;");
   },
 
-  roundLoss(playerSelection, computerSelection) {
-    this.header();
+  logRoundLoss(playerSelection, computerSelection) {
+    this.logHeader();
     console.log(
       `%cYou lost! ${computerSelection} beats ${playerSelection}.`,
       "color: #ff6363;",
     );
   },
 
-  playAgain() {
-    console.log('Call "game()" to play again.');
-  },
-
-  gameWin() {
+  logGameWin() {
     console.log(
       "%cYou won the game. Congratulations!",
       "background-image: linear-gradient(to left, #a8ff78, #78ffd6); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
     );
-    this.playAgain();
   },
 
-  gameDraw() {
+  logGameDraw() {
     console.log(
       "%cOh, it's a draw. Boring...",
       "background-image: linear-gradient(to left, #fdc830, #f37335); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
     );
-    this.playAgain();
   },
 
-  gameLoss() {
+  logGameLoss() {
     console.log(
       "%cYou lost the game. That's bad.",
       "background-image: linear-gradient(to left, #ff416C, #ff4b2b); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
     );
-    this.playAgain();
+  },
+
+  logExit() {
+    console.clear();
+    console.log(`You exited the game.
+Call "game()" to play again.`);
+  },
+
+  logLeave() {
+    this.logExit();
+    alert("You left the Game... See you in hell!");
+  },
+
+  logEnd() {
+    this.logExit();
+    alert("See you, sweety !!!");
+  },
+
+  getPlayerMoveInput() {
+    return prompt("What's your move?");
+  },
+
+  getPlayerLeaveConfirmation() {
+    return confirm("If you leave, mankind will be ASHED. Boo!");
+  },
+
+  getPlayerPlayAgainInput() {
+    return prompt("Want to play again? (yes or no)");
+  },
+
+  alertYesOrNo() {
+    alert("You must decide! Yes or no...");
   },
 };
