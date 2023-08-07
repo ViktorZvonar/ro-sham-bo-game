@@ -24,7 +24,7 @@ export function game() {
     playRound(playerSelection, computerSelection);
   }
 
-  finishGame(scoreboard);
+  finishGame();
   replayGame(game);
 
   return 0;
