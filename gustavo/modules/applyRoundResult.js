@@ -1,7 +1,7 @@
 import { UI } from "./UI.js";
 import { RESULTS } from "./constants.js";
 
-export function processRoundResult(
+export function applyRoundResult(
   roundResult,
   playerSelection,
   computerSelection,
