@@ -8,7 +8,7 @@ import { leaveGame } from "./leaveGame.js";
 
 export function game() {
   scoreboard.reset();
-  ui.header();
+  ui.logHeader();
 
   for (let i = 0; i < 5; i++) {
     let playerSelection = playerPlay();

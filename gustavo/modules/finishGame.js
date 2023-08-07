@@ -7,11 +7,11 @@ export function finishGame(game) {
   const finalResult = scoreboard.getFinalResult();
 
   if (finalResult === RESULTS.WIN) {
-    ui.gameWin();
+    ui.logGameWin();
   } else if (finalResult === RESULTS.DRAW) {
-    ui.gameDraw();
+    ui.logGameDraw();
   } else if (finalResult === RESULTS.LOSS) {
-    ui.gameLoss();
+    ui.logGameLoss();
   }
 
   replayGame(game);

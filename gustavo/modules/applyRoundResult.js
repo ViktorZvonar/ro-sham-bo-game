@@ -9,13 +9,13 @@ export function applyRoundResult(
 ) {
   if (roundResult === RESULTS.WIN) {
     scoreboard.countRoundWin();
-    ui.roundWin(playerSelection, computerSelection, scoreboard);
+    ui.logRoundWin(playerSelection, computerSelection, scoreboard);
   } else if (roundResult === RESULTS.DRAW) {
     scoreboard.countRoundDraw(playerSelection);
-    ui.roundDraw(playerSelection, scoreboard);
+    ui.logRoundDraw(playerSelection, scoreboard);
   } else if (roundResult === RESULTS.LOSS) {
     scoreboard.countRoundLoss(playerSelection, computerSelection);
-    ui.roundLoss(playerSelection, computerSelection, scoreboard);
+    ui.logRoundLoss(playerSelection, computerSelection, scoreboard);
   }
 
   scoreboard.countRound();
