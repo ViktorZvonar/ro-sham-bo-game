@@ -37,7 +37,7 @@ Losses: ${scoreboard.losses}`,
   },
 
   logWrongInput() {
-    this.header();
+    this.logHeader();
     console.log(
       `⚠️ Wrong input. Try again.                                   
 ⚠️ You have to choose between "rock", "paper" and "scissors".
