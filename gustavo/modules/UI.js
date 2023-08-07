@@ -1,5 +1,7 @@
+import { scoreboard } from "./scoreboard.js";
+
 export const UI = {
-  header(scoreboard) {
+  header() {
     console.clear();
     console.log(
       "%c\n\n\n\n\n\nROCK PAPER SCISSORS",
@@ -44,8 +46,8 @@ Losses: ${scoreboard.losses}`,
     return prompt("What's your move?");
   },
 
-  wrongInput(scoreboard) {
-    this.header(scoreboard);
+  wrongInput() {
+    this.header();
     console.log(
       `⚠️ Wrong input. Try again.                                   
 ⚠️ You have to choose between "rock", "paper" and "scissors".
@@ -53,21 +55,21 @@ Losses: ${scoreboard.losses}`,
     );
   },
 
-  roundWin(playerSelection, computerSelection, scoreboard) {
-    this.header(scoreboard);
+  roundWin(playerSelection, computerSelection) {
+    this.header();
     console.log(
       `%cYou won! ${playerSelection} beats ${computerSelection}.`,
       "color: #03fc35;",
     );
   },
 
-  roundDraw(selection, scoreboard) {
-    this.header(scoreboard);
+  roundDraw(selection) {
+    this.header();
     console.log(`%cIt's a draw! Both chose ${selection}.`, "color: #fcba03;");
   },
 
-  roundLoss(playerSelection, computerSelection, scoreboard) {
-    this.header(scoreboard);
+  roundLoss(playerSelection, computerSelection) {
+    this.header();
     console.log(
       `%cYou lost! ${computerSelection} beats ${playerSelection}.`,
       "color: #ff6363;",
@@ -75,10 +77,7 @@ Losses: ${scoreboard.losses}`,
   },
 
   playAgain() {
-    console.log(
-      '%cCall "game()" to play again.',
-      "font-size: 16px; font-weight-bold;",
-    );
+    console.log('Call "game()" to play again.');
   },
 
   gameWin() {

@@ -1,11 +1,11 @@
 import { UI } from "./UI.js";
 import { RESULTS } from "./constants.js";
+import { scoreboard } from "./scoreboard.js";
 
 export function applyRoundResult(
   roundResult,
   playerSelection,
   computerSelection,
-  scoreboard,
 ) {
   if (roundResult === RESULTS.WIN) {
     scoreboard.countRoundWin();

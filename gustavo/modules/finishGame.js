@@ -1,7 +1,8 @@
 import { UI } from "./UI.js";
 import { RESULTS } from "./constants.js";
+import { scoreboard } from "./scoreboard.js";
 
-export function finishGame(scoreboard) {
+export function finishGame() {
   const finalResult = scoreboard.getFinalResult();
 
   if (finalResult === RESULTS.WIN) {
