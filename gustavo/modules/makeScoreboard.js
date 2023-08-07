@@ -5,6 +5,10 @@ export function makeScoreboard() {
     draws: 0,
     rounds: 1,
 
+    isFinished() {
+      return this.wins >= 5;
+    },
+
     countWin() {
       this.wins++;
     },
