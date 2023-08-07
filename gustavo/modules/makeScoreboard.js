@@ -1,3 +1,5 @@
+import { RESULTS } from "./constants.js";
+
 export function makeScoreboard() {
   return {
     wins: 0,
@@ -5,24 +7,27 @@ export function makeScoreboard() {
     draws: 0,
     rounds: 1,
 
-    isFinished() {
-      return this.wins >= 5;
-    },
-
-    countWin() {
+    countRoundWin() {
       this.wins++;
     },
 
-    countLoss() {
+    countRoundLoss() {
       this.losses++;
     },
 
-    countDraw() {
+    countRoundDraw() {
       this.draws++;
     },
 
     countRound() {
       this.rounds++;
+    },
+
+    getFinalResult() {
+      const netScore = this.wins - this.losses;
+      if (netScore > 0) return RESULTS.WIN;
+      else if (netScore === 0) return RESULTS.DRAW;
+      else if (netScore < 0) return RESULTS.LOSS;
     },
   };
 }
