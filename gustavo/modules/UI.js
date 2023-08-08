@@ -1,6 +1,43 @@
 import { scoreboard } from "./scoreboard.js";
 
 export const ui = {
+  logStartScreen() {
+    console.log(`
+    |oooo|        |oooo|
+    |oooo| .----. |oooo|
+    |Oooo|/\\_||_/\\|oooO|
+    '----' / __ \\ '----'
+    ,/ |#|/\\/__\\/\\|#| \\,
+   /  \\|#|| |/\\| ||#|/  \\
+  / \\_/|_|| |/\\| ||_|\\_/ \\
+ |_\\/    o\\=----=/o    \\/_|
+ <_>      |=\\__/=|      <_>
+ <_>      |------|      <_>
+ | |   ___|======|___   | |
+//\\\\  / |O|======|O| \\  //\\\\
+|  |  | |O+------+O| |  |  |
+|\\/|  \\_+/        \\+_/  |\\/|
+\\__/  _|||        |||_  \\__/
+      | ||        || |
+     [==|]        [|==]
+     [===]        [===]
+      >_<          >_<
+     || ||        || ||
+     || ||        || ||
+     || ||        || ||
+   __|\\_/|__    __|\\_/|__
+  /___n_n___\\  /___n_n___\\  
+`);
+    console.log(
+      `%c
+Hello, human! Let's play a game.
+
+Call "game()" to start.
+`,
+      "font-size: 16px; font-weight-bold;",
+    );
+  },
+
   welcome() {
     alert(
       "Welcome! Human! You're gonna play agaist the evil AI - The Destroyer",
@@ -14,7 +51,7 @@ export const ui = {
       "%c\n\n\n\n\n\nROCK PAPER SCISSORS",
       "font-size: 32px; font-weight: bold;",
       `\n\nRules:
-- Use the cancel button to exit the game (NOT recommended).
+- Use the cancel button to exit the game.
 - Use the alert box to input "rock", "paper" or "scissors". Then click "OK" and your input will be compared against your opponent's.
 - There are five rounds. You win the game if you win more rounds than your opponent.
 
@@ -100,8 +137,7 @@ Losses: ${scoreboard.losses}`,
 
   logExit() {
     console.clear();
-    console.log(`You exited the game.
-Call "game()" to play again.`);
+    this.logStartScreen();
   },
 
   logLeave() {

@@ -1,8 +1,8 @@
 import { ui } from "./ui.js";
 
 export function leaveGame() {
-  const wantToExit = ui.getPlayerLeaveConfirmation();
-  if (wantToExit) {
+  const wantToLeave = ui.getPlayerLeaveConfirmation();
+  if (wantToLeave) {
     ui.logLeave();
     return true;
   }
