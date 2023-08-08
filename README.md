@@ -7,6 +7,12 @@ Defend humanity against the evil AI - The Destroyer! The future of mankind lies 
 **Warning:**  
 While the game is fun, the AI has a twisted sense of humor! Enjoy and may the odds be ever in your favor.
 
+## How to Play:
+
+1. Open the browser console.
+2. Call the function `game()` to start playing.
+3. Follow on-screen instructions and alerts.
+
 ## Features:
 
 - Cool art visuals in the console.
@@ -14,12 +20,6 @@ While the game is fun, the AI has a twisted sense of humor! Enjoy and may the od
 - 5 rounds per game.
 - Use alerts for inputs and feedback.
 - Play against a randomized computer opponent.
-
-## How to Play:
-
-1. Open the browser console.
-2. Call the function `game()` to start playing.
-3. Follow on-screen instructions and alerts.
 
 ## Technical Details:
 
