@@ -1,6 +1,13 @@
 import { scoreboard } from "./scoreboard.js";
 
 export const ui = {
+  welcome() {
+    alert(
+      "Welcome! Human! You're gonna play agaist the evil AI - The Destroyer",
+    );
+    alert("If you win, the mankind WILL live... If not, God be with you!!!");
+  },
+
   logHeader() {
     console.clear();
     console.log(
@@ -43,6 +50,7 @@ Losses: ${scoreboard.losses}`,
 ⚠️ You have to choose between "rock", "paper" and "scissors".
 ⚠️ Or use the shortcuts "r", "p" and "s".`,
     );
+    alert("Ha-ha, you're doing it all wrong...");
   },
 
   logRoundWin(playerSelection, computerSelection) {
@@ -68,9 +76,10 @@ Losses: ${scoreboard.losses}`,
 
   logGameWin() {
     console.log(
-      "%cYou won the game. Congratulations!",
+      "%cYou won the game. Congrats!",
       "background-image: linear-gradient(to left, #a8ff78, #78ffd6); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
     );
+    alert("The world is saved! Good job!");
   },
 
   logGameDraw() {
@@ -78,6 +87,7 @@ Losses: ${scoreboard.losses}`,
       "%cOh, it's a draw. Boring...",
       "background-image: linear-gradient(to left, #fdc830, #f37335); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
     );
+    alert("You cannot escape the destiny!!!");
   },
 
   logGameLoss() {
@@ -85,6 +95,7 @@ Losses: ${scoreboard.losses}`,
       "%cYou lost the game. That's bad.",
       "background-image: linear-gradient(to left, #ff416C, #ff4b2b); color: #000000; font-size: 18px; font-weight: bold; padding: 16px;",
     );
+    alert("Mankind is doomed!!!");
   },
 
   logExit() {
