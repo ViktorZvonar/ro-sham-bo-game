@@ -69,9 +69,9 @@ Shortcuts:
     console.log(
       "%cSCOREBOARD",
       "font-size: 20px; font-weight: bold;",
-      `\n\nWins: ${scoreboard.wins}
-Draws: ${scoreboard.draws}
-Losses: ${scoreboard.losses}`,
+      `\n\n🟩 Wins: ${scoreboard.wins}
+🟧 Draws: ${scoreboard.draws}
+🟥 Losses: ${scoreboard.losses}`,
     );
     console.log("\n");
     console.log(
