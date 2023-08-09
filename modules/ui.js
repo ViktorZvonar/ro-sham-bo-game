@@ -110,7 +110,7 @@ Shortcuts:
     this.logHeader();
     console.log(
       `%cYou lost! ${computerSelection} beats ${playerSelection}.`,
-      "color: #ff6363; background-color: #000000; padding: 5px 5px;",
+      "color: #ff0000; background-color: #000000; padding: 5px 5px;",
     );
   },
 
