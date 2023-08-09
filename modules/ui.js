@@ -94,20 +94,23 @@ Shortcuts:
     this.logHeader();
     console.log(
       `%cYou won! ${playerSelection} beats ${computerSelection}.`,
-      "color: #03fc35;",
+      "color: #03fc35; background-color: #000000; padding: 5px 5px;",
     );
   },
 
   logRoundDraw(selection) {
     this.logHeader();
-    console.log(`%cIt's a draw! Both chose ${selection}.`, "color: #fcba03;");
+    console.log(
+      `%cIt's a draw! Both chose ${selection}.`,
+      "color: #fcba03; background-color: #000000; padding: 5px 5px;",
+    );
   },
 
   logRoundLoss(playerSelection, computerSelection) {
     this.logHeader();
     console.log(
       `%cYou lost! ${computerSelection} beats ${playerSelection}.`,
-      "color: #ff6363;",
+      "color: #ff6363; background-color: #000000; padding: 5px 5px;",
     );
   },
 
